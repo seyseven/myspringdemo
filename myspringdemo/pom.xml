@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from com.example.myspringdemo.dao -->
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>myspringdemo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>myspringdemo</name>
+    <description>Demo project for Spring Boot</description>
+
+
+    <properties>
+        <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
+        <spring.mvc.version>5.1.8.RELEASE</spring.mvc.version>
+        <hibernate.version>5.4.3.Final</hibernate.version>
+
+        <java.version>1.8</java.version>
+        <spring.data>1.3.4.RELEASE</spring.data>
+        <javax.servlet>3.0.1</javax.servlet>
+        <!-- <hb.manager>4.2.5.Final</hb.manager>-->
+        <hb.manager>5.3.10.Final</hb.manager>
+        <spring.test>3.2.4.RELEASE</spring.test>
+        <junit.version>4.11</junit.version>
+        <version.vaadin>13.0.11</version.vaadin>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${javax.servlet}</version>
+            <scope>compile</scope>
+            <!--
+            <scope>provided</scope>
+            -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-hateoas</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jersey</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web-services</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-rest-hal-browser</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-jdbc</artifactId>
+            <version>2.1.7.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.mvc.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.4.3.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <!-- <version>${hb.manager}</version> -->
+            <version>5.4.3.Final</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-bom</artifactId>
+            <version>13.0.11</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-button-flow</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-notification-flow</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-ordered-layout-flow</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-server</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-grid-flow</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-data</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-icons-flow</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-text-field-flow</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-spring</artifactId>
+            <version>10.1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-spring-boot-starter</artifactId>
+            <version>13.0.11</version>
+        </dependency>
+        -->
+
+
+
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- vaadin4spring https://github.com/peholmst/vaadin4spring
+             contains lots of handy helpers for serious Spring + Vaadin
+             applications. This example uses event bus to decouple the editor
+             form from the MainUI class.
+        -->
+        <dependency>
+            <groupId>org.vaadin.spring.extensions</groupId>
+            <artifactId>vaadin-spring-ext-boot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.vaadin.spring.addons</groupId>
+            <artifactId>vaadin-spring-addon-eventbus</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.vaadin</groupId>
+            <artifactId>viritin</artifactId>
+        </dependency>
+        <!-- Using Vaadin add-ons with client side extensions is easy, switch
+        as an example in this project, see also vaadin-maven-plugin
+        configuration.
+        -->
+        <dependency>
+            <groupId>org.vaadin.teemu</groupId>
+            <artifactId>switch</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>3.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-spring-addon</artifactId>
+            <version>1.0.0.beta7</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-bom</artifactId>
+                <version>${version.vaadin}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.vaadin.spring.extensions</groupId>
+                <artifactId>vaadin-spring-ext-boot</artifactId>
+                <version>2.0.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.vaadin.spring.addons</groupId>
+                <artifactId>vaadin-spring-addon-eventbus</artifactId>
+                <version>2.0.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.vaadin</groupId>
+                <artifactId>viritin</artifactId>
+                <version>2.8</version>
+            </dependency>
+            <dependency>
+                <groupId>org.vaadin.teemu</groupId>
+                <artifactId>switch</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>3.6.3</version>
+                <configuration>
+                    <propertyFile>src/main/resources/application.yml</propertyFile>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <!-- Using client side Vaadin add-ons (Switch in this example)
+                 require a custom built "widgetset". Vaadin maven plugin does
+                 that automatically, here using a handy cloud service with CDN
+                 hosting.
+            -->
+            <plugin>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-maven-plugin</artifactId>
+                <version>${version.vaadin}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <!-- Needed for theme: -->
+                            <goal>update-widgetset</goal>
+                            <goal>compile</goal>
+                            <!-- Needed for theme: -->
+                            <goal>update-theme</goal>
+                            <goal>compile-theme</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Use local as value here for local widgetset compilation -->
+                    <widgetsetMode>cdn</widgetsetMode>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>vaadin-addons</id>
+            <url>http://maven.vaadin.com/vaadin-addons</url>
+        </repository>
+    </repositories>
+</project>
