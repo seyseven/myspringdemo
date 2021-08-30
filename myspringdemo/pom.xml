@@ -28,7 +28,7 @@
         <hb.manager>5.3.10.Final</hb.manager>
         <spring.test>3.2.4.RELEASE</spring.test>
         <junit.version>4.11</junit.version>
-        <version.vaadin>13.0.11</version.vaadin>
+        <version.vaadin>14.6.8</version.vaadin>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -158,7 +158,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-bom</artifactId>
-            <version>13.0.11</version>
+            <version>14.6.8</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
